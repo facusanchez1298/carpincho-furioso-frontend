@@ -10,18 +10,18 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_category")
-    private int idCategory;
+    private Long idCategory;
 
     @Column(name = "category_name")
     private String categoryName;
 
     @Column(name = "categories_services")
     private Set<Service> services = new HashSet<>();
-    public int getIdCategory() {
+    public Long getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(int idCategory) {
+    public void setIdCategory(Long idCategory) {
         this.idCategory = idCategory;
     }
 

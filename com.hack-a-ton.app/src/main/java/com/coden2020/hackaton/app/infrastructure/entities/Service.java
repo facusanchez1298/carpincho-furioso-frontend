@@ -10,7 +10,7 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_service")
-    private int idService;
+    private Long idService;
 
     @OneToMany(mappedBy = "service")
     private Set<User_contracts_service> contracts;
@@ -30,11 +30,11 @@ public class Service {
     )
     private Set<User> users = new HashSet<>();
 
-    public int getIdService() {
+    public Long getIdService() {
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(Long idService) {
         this.idService = idService;
     }
 

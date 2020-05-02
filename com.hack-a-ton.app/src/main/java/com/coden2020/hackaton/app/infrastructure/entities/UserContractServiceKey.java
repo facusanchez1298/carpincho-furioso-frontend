@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Embeddable
 public class UserContractServiceKey implements Serializable {
     @Column(name = "idUser")
-    private int idUser;
+    private Long idUser;
     @Column(name = "idService")
-    private int idService;
+    private Long idService;
 }
