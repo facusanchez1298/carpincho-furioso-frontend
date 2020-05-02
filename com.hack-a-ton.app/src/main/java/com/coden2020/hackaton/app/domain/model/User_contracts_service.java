@@ -1,4 +1,4 @@
-package com.coden2020.hackaton.app.model;
+package com.coden2020.hackaton.app.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
