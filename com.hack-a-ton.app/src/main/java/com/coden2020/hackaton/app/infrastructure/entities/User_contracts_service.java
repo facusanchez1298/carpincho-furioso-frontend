@@ -18,6 +18,9 @@ public class User_contracts_service {
     @MapsId("idService")
     private Service service;
 
+    @Column(name = "id_user_provider")
+    private int idUserProvider;
+
     @Column(name = "fecha")
     private Date fecha;
 
