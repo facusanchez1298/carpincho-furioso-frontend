@@ -9,7 +9,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user")
-    private int idUser;
+    private Long idUser;
 
     @OneToMany(mappedBy = "user")
     private Set<User_contracts_service> contracts;
@@ -32,11 +32,11 @@ public class User {
     @Column(name = "user_dni")
     private String userDni;
 
-    public int getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 
