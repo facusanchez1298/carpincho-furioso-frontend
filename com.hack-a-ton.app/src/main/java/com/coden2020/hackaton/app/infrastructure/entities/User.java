@@ -1,4 +1,4 @@
-package com.coden2020.hackaton.app.domain.model;
+package com.coden2020.hackaton.app.infrastructure.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -86,5 +86,13 @@ public class User {
 
     public void setUserDni(String userDni) {
         this.userDni = userDni;
+    }
+
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
     }
 }

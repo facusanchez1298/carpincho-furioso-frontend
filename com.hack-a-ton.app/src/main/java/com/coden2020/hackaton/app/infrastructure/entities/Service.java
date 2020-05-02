@@ -1,4 +1,4 @@
-package com.coden2020.hackaton.app.domain.model;
+package com.coden2020.hackaton.app.infrastructure.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -52,5 +52,13 @@ public class Service {
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

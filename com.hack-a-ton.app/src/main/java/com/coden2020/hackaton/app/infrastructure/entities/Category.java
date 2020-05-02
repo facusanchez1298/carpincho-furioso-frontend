@@ -1,4 +1,4 @@
-package com.coden2020.hackaton.app.domain.model;
+package com.coden2020.hackaton.app.infrastructure.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
