@@ -15,7 +15,6 @@ public class Service {
     @OneToMany(mappedBy = "service")
     private Set<User_contracts_service> contracts;
 
-    @Column(name = "categories_in_services")
     @ManyToMany
     @JoinTable(
             name = "service_category",
@@ -23,9 +22,12 @@ public class Service {
             inverseJoinColumns = { @JoinColumn(name = "id_service")})
     private Set<Category> categories = new HashSet<>();
 
-    @Column(name = "user_service")
     @ManyToMany
-
+    @JoinTable(
+            name = "user_service",
+            joinColumns = { @JoinColumn(name = "id_user")},
+            inverseJoinColumns = { @JoinColumn(name = "id_service")}
+    )
     private Set<User> users = new HashSet<>();
 
     public int getIdService() {

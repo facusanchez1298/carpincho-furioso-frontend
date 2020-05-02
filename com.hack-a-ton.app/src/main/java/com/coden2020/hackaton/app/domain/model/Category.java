@@ -15,7 +15,7 @@ public class Category {
     @Column(name = "category_name")
     private String categoryName;
 
-    @Column(name = "services_categories")
+    @Column(name = "categories_services")
     private Set<Service> services = new HashSet<>();
     public int getIdCategory() {
         return idCategory;
