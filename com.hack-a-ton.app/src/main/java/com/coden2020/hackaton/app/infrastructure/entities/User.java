@@ -23,6 +23,9 @@ public class User {
     @Column(name = "user_lastName")
     private String userLastName;
 
+    @Column(name = "user_phone")
+    private String phone;
+
     @Column(name = "user_pass")
     private String userPass;
 
@@ -33,6 +36,15 @@ public class User {
     private String userDni;
 
     public User() {
+    }
+
+    public User(String userName, String userLastName, String userPass, String userEmail, String phone, String userDni) {
+        this.userName = userName;
+        this.userLastName = userLastName;
+        this.userPass = userPass;
+        this.userEmail = userEmail;
+        this.phone = phone;
+        this.userDni = userDni;
     }
 
     public Long getIdUser() {
