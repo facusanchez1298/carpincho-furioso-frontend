@@ -3,14 +3,16 @@ package com.coden2020.hackaton.app.domain.model;
 public class User {
 
   private String name;
-  private String LastName;
+  private String lastName;
   private String email;
+  private String phone;
   private String dni;
 
-  public User(String name, String lastName, String email, String dni) {
+  public User(String name, String lastName, String email, String phone, String dni) {
     this.name = name;
-    LastName = lastName;
+    this.lastName = lastName;
     this.email = email;
+    this.phone = phone;
     this.dni = dni;
   }
 
@@ -26,11 +28,11 @@ public class User {
   }
 
   public String getLastName() {
-    return LastName;
+    return lastName;
   }
 
   public void setLastName(String lastName) {
-    LastName = lastName;
+    this.lastName = lastName;
   }
 
   public String getEmail() {
@@ -47,5 +49,13 @@ public class User {
 
   public void setDni(String dni) {
     this.dni = dni;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 }

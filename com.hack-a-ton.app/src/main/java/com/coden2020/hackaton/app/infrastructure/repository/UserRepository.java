@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User,Long> {
   Optional<User> findById(Long id);
-  Optional<User> findByName(String name);
+  Optional<User> findByUserName(String name);
   List<User> findAll();
 }

@@ -3,7 +3,9 @@ package com.coden2020.hackaton.app.infrastructure.repository;
 import com.coden2020.hackaton.app.domain.model.UserSignInInterface;
 import com.coden2020.hackaton.app.infrastructure.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserCreationUseCaseImp implements UserSignInInterface {
 
     private UserRepository userRepository;

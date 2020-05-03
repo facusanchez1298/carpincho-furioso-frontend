@@ -1,4 +1,4 @@
-package com.coden2020.hackaton.app.infrastructure.mappers;
+package com.coden2020.hackaton.app.infrastructure.controller;
 
 import com.coden2020.hackaton.app.domain.model.User;
 import com.coden2020.hackaton.app.domain.usecases.ProvideAllCategoriesUseCase;

@@ -110,4 +110,12 @@ public class User {
     public void setServices(Set<Service> services) {
         this.services = services;
     }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

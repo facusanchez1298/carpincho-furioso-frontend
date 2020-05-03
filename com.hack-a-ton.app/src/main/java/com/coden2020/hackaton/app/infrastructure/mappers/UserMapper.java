@@ -15,6 +15,7 @@ public class UserMapper {
     user.setLastName(userRepo.getUserLastName());
     user.setDni(userRepo.getUserDni());
     user.setEmail(userRepo.getUserEmail());
+    user.setPhone(userRepo.getPhone());
     return user;
   }
 
