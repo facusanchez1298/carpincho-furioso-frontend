@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class ExtraDataUserProvider implements Serializable {
 
     @Column(name = "id_user")
-    private int idUser;
+    private Long idUser;
     @Column(name = "id_service")
-    private int idService;
+    private Long idService;
 }
