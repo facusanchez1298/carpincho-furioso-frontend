@@ -1,19 +1,26 @@
 package com.coden2020.hackaton.app.domain.usecases;
 
 import com.coden2020.hackaton.app.domain.model.ProvideServiceInterface;
-import com.coden2020.hackaton.app.infrastructure.entities.UserContractServiceKey;
-import com.coden2020.hackaton.app.infrastructure.repository.UserContractServiceKeyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 
-public class ProvideServiceUseCase implements ProvideServiceInterface {
+public class ProvideServiceUseCase {
+  ProvideServiceInterface provideServiceInterface;
 
-  UserContractServiceKeyRepository userContractServiceKeyRepository;
+  @Autowired
+  public ProvideServiceUseCase(
+      ProvideServiceInterface provideServiceInterface) {
+    this.provideServiceInterface = provideServiceInterface;
+  }
 
-  @Override
-  public UserContractServiceKey attachService(Long userId, Long serviceId) {
-    UserContractServiceKey userContractServiceKey= new UserContractServiceKey();
-    userContractServiceKey.setIdService(serviceId);
-    userContractServiceKey.setIdUser(userId);
-
-    return userContractServiceKeyRepository.save(userContractServiceKey);
+  public ResponseEntity execute(String userId, String serviceId) {
+    Long userId2 = Long.parseLong(userId);
+    Long serviceId2 = Long.parseLong(serviceId);
+    try {
+      provideServiceInterface.attachService(userId2, serviceId2);
+    } catch (Exception e) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok().build();
   }
 }

@@ -1,7 +1,7 @@
 package com.coden2020.hackaton.app.domain.model;
 
-import com.coden2020.hackaton.app.infrastructure.entities.UserContractServiceKey;
+import com.coden2020.hackaton.app.infrastructure.entities.User;
 
 public interface ProvideServiceInterface {
-  UserContractServiceKey attachService(Long userId, Long serviceId);
+  User attachService(Long userId, Long serviceId);
 }
