@@ -26,7 +26,7 @@ public class ProvideServiceImp implements ProvideServiceInterface {
   public User attachService(Long userId, Long serviceId) {
     Optional<User> optionalUser = userRepository.findById(userId);
     Optional<Service> optionalService = serviceRepository.findById(serviceId);
-    if (optionalUser.isEmpty() || optionalService.isEmpty())
+    if (!optionalUser.isPresent() || !optionalService.isPresent())
       throw new RuntimeException("Invalid input");
     User user = optionalUser.get();
     Service service = optionalService.get();

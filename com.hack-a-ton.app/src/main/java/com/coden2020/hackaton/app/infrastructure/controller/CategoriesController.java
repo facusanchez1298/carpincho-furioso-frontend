@@ -16,9 +16,15 @@ import java.util.List;
 @RestController("/services")
 public class CategoriesController {
 
-  private transient ProvideAllCategoriesUseCase provideAllCategoriesUseCase;
-  private transient ProvideUserForCategoriesUseCase provideUserForCategoriesUseCase;
-  private transient ProvideAllServicesUseCase provideAllServicesUseCase;
+  private transient final ProvideAllCategoriesUseCase provideAllCategoriesUseCase;
+  private transient final ProvideUserForCategoriesUseCase provideUserForCategoriesUseCase;
+  private transient final ProvideAllServicesUseCase provideAllServicesUseCase;
+
+  public CategoriesController(ProvideAllCategoriesUseCase provideAllCategoriesUseCase, ProvideUserForCategoriesUseCase provideUserForCategoriesUseCase, ProvideAllServicesUseCase provideAllServicesUseCase) {
+    this.provideAllCategoriesUseCase = provideAllCategoriesUseCase;
+    this.provideUserForCategoriesUseCase = provideUserForCategoriesUseCase;
+    this.provideAllServicesUseCase = provideAllServicesUseCase;
+  }
 
   @GetMapping("/categories")
   public ResponseEntity<List<Category>>  getCategories(){
