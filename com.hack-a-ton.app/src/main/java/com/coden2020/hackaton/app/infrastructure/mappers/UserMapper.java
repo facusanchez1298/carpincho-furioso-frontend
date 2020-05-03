@@ -1,10 +1,12 @@
 package com.coden2020.hackaton.app.infrastructure.mappers;
 
 import com.coden2020.hackaton.app.domain.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserMapper {
 
   public User map(com.coden2020.hackaton.app.infrastructure.entities.User userRepo){
