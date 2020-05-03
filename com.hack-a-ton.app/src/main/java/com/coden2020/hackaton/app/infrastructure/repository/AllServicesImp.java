@@ -4,10 +4,12 @@ import com.coden2020.hackaton.app.domain.model.AllServicesUCInterface;
 import com.coden2020.hackaton.app.infrastructure.entities.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class AllServicesImp implements AllServicesUCInterface {
 
-  ServiceRepository serviceRepository;
+  private ServiceRepository serviceRepository;
   @Autowired
   public AllServicesImp(
       ServiceRepository serviceRepository) {
