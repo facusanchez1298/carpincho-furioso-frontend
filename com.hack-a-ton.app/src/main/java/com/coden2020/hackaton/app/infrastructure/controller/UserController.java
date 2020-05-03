@@ -4,6 +4,7 @@ import com.coden2020.hackaton.app.domain.usecases.ProvideServiceUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController(value = "/user")
@@ -16,8 +17,8 @@ public class UserController {
     this.provideServiceUseCase = provideServiceUseCase;
   }
 
-  @PostMapping("/addService/")
-  public ResponseEntity addService(String userId, String serviceId) {
+  @PostMapping("/addService")
+  public ResponseEntity addService(@RequestParam String userId, @RequestParam String serviceId) {
     return provideServiceUseCase.execute(userId,serviceId);
   }
 
