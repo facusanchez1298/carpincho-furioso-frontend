@@ -31,7 +31,6 @@ public class ProvideUserDataImp implements ProvideUserDataService {
     fullUserData.setUserProviderExtraData(
       userProviderExtraDataRepository.findById(user.getIdUser()).get()
     );
-
     return fullUserData;
   }
 }

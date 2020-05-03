@@ -18,8 +18,8 @@ public class UserLoginUseCaseImp implements UserLoginUseCaseInterface {
     }
 
     @Override
-    public User login(String fullName, String pass) {
-        Optional<User> user = this.userRepository.findByUserName(fullName);
+    public User login(String email, String pass) {
+        Optional<User> user = this.userRepository.findByUserEmail(email);
         if(!user.get().getUserName().isEmpty() && (!user.get().getUserPass().isEmpty() && user.get().getUserPass().equals(pass))){
             return user.get();
         }

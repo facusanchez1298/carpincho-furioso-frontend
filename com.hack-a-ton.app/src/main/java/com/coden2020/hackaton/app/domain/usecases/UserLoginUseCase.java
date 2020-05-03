@@ -16,9 +16,9 @@ public class UserLoginUseCase {
         this.userLoginUseCase = userLoginUseCase;
     }
 
-    public ResponseEntity<User> execute(String name, String pass){
+    public ResponseEntity<User> execute(String email, String pass){
         try{
-            this.userLoginUseCase.login(name, pass);
+            this.userLoginUseCase.login(email, pass);
         }catch (Exception e){
             return ResponseEntity.notFound().build();
         }
