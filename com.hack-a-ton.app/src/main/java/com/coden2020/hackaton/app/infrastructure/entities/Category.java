@@ -15,8 +15,12 @@ public class Category {
     @Column(name = "category_name")
     private String categoryName;
 
-    @Column(name = "categories_services")
+    @ManyToMany
     private Set<Service> services = new HashSet<>();
+
+    public Category() {
+    }
+
     public Long getIdCategory() {
         return idCategory;
     }

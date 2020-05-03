@@ -32,6 +32,9 @@ public class User {
     @Column(name = "user_dni")
     private String userDni;
 
+    public User() {
+    }
+
     public Long getIdUser() {
         return idUser;
     }

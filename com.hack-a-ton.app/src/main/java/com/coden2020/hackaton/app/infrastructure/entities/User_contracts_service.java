@@ -1,11 +1,9 @@
 package com.coden2020.hackaton.app.infrastructure.entities;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class User_contracts_service {
     @EmbeddedId
     private UserContractServiceKey key;
@@ -29,6 +27,9 @@ public class User_contracts_service {
 
     @Column(name = "contract_date")
     private Date contractDate;
+
+    public User_contracts_service() {
+    }
 
     public UserContractServiceKey getKey() {
         return key;

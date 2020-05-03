@@ -2,7 +2,11 @@ package com.coden2020.hackaton.app.infrastructure.entities;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.List;
 
+@Entity
 public class UserProviderExtraData {
 
     @EmbeddedId
@@ -11,11 +15,15 @@ public class UserProviderExtraData {
     @Column(name = "user_phone")
     private String userPhone;
 
-    @Column(name = "user_proffessional_email")
+    @Column(name = "user_professional_email")
     private String userProfessionalEmail;
 
     @Column(name = "user_location")
     private String location;
+
+    @OneToMany
+    @Column(name = "user_cv")
+    private List<UserCurriculum> userCurriculumList;
 
     public ExtraDataUserProvider getUserServiceProviderId() {
         return userServiceProviderId;

@@ -30,6 +30,9 @@ public class Service {
     )
     private Set<User> users = new HashSet<>();
 
+    public Service() {
+    }
+
     public Long getIdService() {
         return idService;
     }

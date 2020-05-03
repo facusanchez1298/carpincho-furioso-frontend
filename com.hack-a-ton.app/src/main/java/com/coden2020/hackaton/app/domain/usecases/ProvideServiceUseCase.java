@@ -3,7 +3,9 @@ package com.coden2020.hackaton.app.domain.usecases;
 import com.coden2020.hackaton.app.domain.model.ProvideServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProvideServiceUseCase {
   ProvideServiceInterface provideServiceInterface;
 

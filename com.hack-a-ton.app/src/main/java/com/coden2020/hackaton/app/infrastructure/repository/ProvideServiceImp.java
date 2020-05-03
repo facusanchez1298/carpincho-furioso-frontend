@@ -5,7 +5,10 @@ import com.coden2020.hackaton.app.infrastructure.entities.Service;
 import com.coden2020.hackaton.app.infrastructure.entities.User;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+
+@Repository
 public class ProvideServiceImp implements ProvideServiceInterface {
 
   private UserRepository userRepository;
