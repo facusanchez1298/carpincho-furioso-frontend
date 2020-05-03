@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProvideAllServicesUseCase {
-  private transient AllServicesUCInterface allServicesUCInterface;
+  private AllServicesUCInterface allServicesUCInterface;
   @Autowired
   public ProvideAllServicesUseCase(
       AllServicesUCInterface allServicesUCInterface) {

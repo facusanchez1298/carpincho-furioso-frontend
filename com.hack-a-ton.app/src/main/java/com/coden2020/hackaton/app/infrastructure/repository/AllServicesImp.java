@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AllServicesImp implements AllServicesUCInterface {
 
-  ServiceRepository serviceRepository;
+  private ServiceRepository serviceRepository;
 
   @Autowired
   public AllServicesImp(
