@@ -20,12 +20,12 @@ public class UserController {
   UserLoginUseCase userLoginUseCase;
   UserCreationUseCase userCreationUseCase;
   ProvideUserInformationUseCase provideUserInformationUseCase;
-
   @Autowired
   public UserController(
           ProvideServiceUseCase provideServiceUseCase,
           UserLoginUseCase userLoginUseCase,
-          UserCreationUseCase userCreationUseCase) {
+          UserCreationUseCase userCreationUseCase,
+          FindByNameUseCase findByNameUseCase) {
     this.provideServiceUseCase = provideServiceUseCase;
     this.userLoginUseCase = userLoginUseCase;
     this.userCreationUseCase = userCreationUseCase;
@@ -54,6 +54,5 @@ public class UserController {
 
     if(userData == null) return ResponseEntity.notFound().build();
     return ResponseEntity.ok().body(userData);
-  }
 
 }
