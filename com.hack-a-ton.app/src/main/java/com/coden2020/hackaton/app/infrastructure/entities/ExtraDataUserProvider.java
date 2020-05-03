@@ -1,16 +1,13 @@
 package com.coden2020.hackaton.app.infrastructure.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
-import java.util.List;
 
-@Embeddable
+//@Embeddable
 public class ExtraDataUserProvider implements Serializable {
-    @Column(name = "id_user")
+    //@Column(name = "id_user")
     private Long idUser;
-    @Column(name = "id_service")
+    //@Column(name = "id_service")
     private Long idService;
 
 

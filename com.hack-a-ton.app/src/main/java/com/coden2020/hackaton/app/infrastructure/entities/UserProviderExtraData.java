@@ -1,16 +1,24 @@
 package com.coden2020.hackaton.app.infrastructure.entities;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 public class UserProviderExtraData {
 
-    @EmbeddedId
-    private ExtraDataUserProvider userServiceProviderId;
+    @Id
+    private long dni;
+
+    public List<UserCurriculum> getUserCurriculumList() {
+        return userCurriculumList;
+    }
+
+    public void setUserCurriculumList(List<UserCurriculum> userCurriculumList) {
+        this.userCurriculumList = userCurriculumList;
+    }
 
     @Column(name = "user_phone")
     private String userPhone;
@@ -25,12 +33,7 @@ public class UserProviderExtraData {
     @Column(name = "user_cv")
     private List<UserCurriculum> userCurriculumList;
 
-    public ExtraDataUserProvider getUserServiceProviderId() {
-        return userServiceProviderId;
-    }
-
-    public void setUserServiceProviderId(ExtraDataUserProvider userServiceProviderId) {
-        this.userServiceProviderId = userServiceProviderId;
+    public UserProviderExtraData() {
     }
 
     public String getUserPhone() {
@@ -47,6 +50,14 @@ public class UserProviderExtraData {
 
     public void setUserProfessionalEmail(String userProfessionalEmail) {
         this.userProfessionalEmail = userProfessionalEmail;
+    }
+
+    public long getDni() {
+        return dni;
+    }
+
+    public void setDni(long dni) {
+        this.dni = dni;
     }
 
     public String getLocation() {

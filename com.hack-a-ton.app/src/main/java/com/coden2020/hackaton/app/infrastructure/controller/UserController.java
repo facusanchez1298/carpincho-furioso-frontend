@@ -1,7 +1,8 @@
 package com.coden2020.hackaton.app.infrastructure.controller;
 
-import com.coden2020.hackaton.app.domain.usecases.FindByNameUseCase;
+import com.coden2020.hackaton.app.domain.model.usecases.FullUserData;
 import com.coden2020.hackaton.app.domain.usecases.ProvideServiceUseCase;
+import com.coden2020.hackaton.app.domain.usecases.ProvideUserInformationUseCase;
 import com.coden2020.hackaton.app.domain.usecases.UserCreationUseCase;
 import com.coden2020.hackaton.app.domain.usecases.UserLoginUseCase;
 import com.coden2020.hackaton.app.infrastructure.entities.User;
@@ -18,8 +19,7 @@ public class UserController {
   ProvideServiceUseCase provideServiceUseCase;
   UserLoginUseCase userLoginUseCase;
   UserCreationUseCase userCreationUseCase;
-  FindByNameUseCase findByNameUseCase;
-
+  ProvideUserInformationUseCase provideUserInformationUseCase;
   @Autowired
   public UserController(
           ProvideServiceUseCase provideServiceUseCase,
@@ -48,9 +48,11 @@ public class UserController {
     return this.userCreationUseCase.createUser(email, fName, lName, pass, phone, dni);
   }
 
-  @GetMapping("/{username}")
-  public  ResponseEntity<User> findUserByName(@PathVariable String userName) {
-    return findByNameUseCase.execute(userName);
-  }
+  @GetMapping("/{dni}")
+  public ResponseEntity<FullUserData> getUserByDNI(@PathVariable(value = "dni") String dni){
+    FullUserData userData = provideUserInformationUseCase.execute(dni);
+
+    if(userData == null) return ResponseEntity.notFound().build();
+    return ResponseEntity.ok().body(userData);
 
 }
